@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Form validation using javascript</title>
+        <script type="text/javascript">
+            function validation(){
+                if(document.f1.name.value==""){
+                    window.alert("plz enter your name");
+                    return false;
+                }
+                else if(document.f1.email.value==""){
+                    window.alert("plz enter your email");
+                    return false;
+
+                }
+                else{
+                    if(document.f1.addr.value==""){
+                        window.alert("plz enter your address");
+                        return false;
+                    }
+                    else if(document.f1.country.selectedIndex==0){
+                        window.alert("plz select your country");
+                        return false;
+                    }
+                    else if((document.f1.rdo[0].checked==false) && (document.f1.rdo[1].checked==false)){
+                        window.alert("plz choose your gender");
+                        return false;
+                    }
+                    else if((document.f1.chk[0].checked==false) && (document.f1.chk[1].checked==false)){
+                        window.alert("plz select your qualification");
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="lightgreen">
+        <h3 style="text-align: center;">Web form validation using javascript</h3>
+        <form name="f1" action="register.html" onsubmit="return validation()">
+            <fieldset>
+                <legend>registration form</legend><br/>
+                <table border="1">
+                    <tr><td>Name:</td><td><input type="text" name="name"></td></tr>
+                    <tr><td>Email:</td><td><input type="text" name="email"></td></tr>
+                    <tr><td>Address:</td><td><textarea name="addr" rows="5" cols="20"></textarea></td></tr>
+                    <tr>
+                        <td>Country:</td>
+                        <td>
+                            <select name="country">
+                            <option>----Select your country---</option>
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>AUS</option>
+                            <option>UK</option>
+                            <option>SOUTH KOREA</option>
+                        </select>
+                    </td></tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td><input type="radio" name="rdo">Male<input type="radio" name="rdo">Female </td>
+                    </tr>
+                    <tr>
+                        <td>qualification</td>
+                        <td><input type="checkbox" name=""chk> B.E <input type="checkbox" name="chk">M.E </td>
+                    </tr>
+                </table>
+                <br/>
+                <input type="submit" value="Register">
+            </fieldset>
+        </form>
+ </body>
+</html>
